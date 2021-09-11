@@ -1,0 +1,22 @@
+.ContactListLi {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  /* padding: 10px; */
+}
+.ContactBtnDel {
+  margin-left: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+/* .list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 24px;
+} */
