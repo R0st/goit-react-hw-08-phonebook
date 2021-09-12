@@ -41,7 +41,7 @@ export default function LoginView() {
           />
         </label>
 
-        <label sclassName={styles.label}>
+        <label className={styles.label}>
           Пароль
           <input
             type="password"
