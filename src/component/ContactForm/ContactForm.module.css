@@ -1,16 +1,23 @@
 .ContactForm {
-  margin: 20px;
+  margin-top: 20px;
 }
 .ContactLabel {
   display: flex;
-  padding: 10px;
+  flex-direction: column;
+  /* padding-left: 10px; */
   margin-bottom: 20px;
 }
 .ContactInput {
   display: flex;
-  margin-left: 20px;
+  width: 300px;
+  /* margin-left: 10px; */
 }
 .ContactBtn {
   display: block;
   /* margin-left: 40px; */
 }
+
+/* 
+display: flex;
+flex-direction: column;
+margin-bottom: 15px; */

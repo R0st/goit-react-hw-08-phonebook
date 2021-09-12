@@ -8,7 +8,7 @@ export default function Filter() {
 
   return (
     <div className={styles.filter}>
-      <p className={styles.label}>Фильтр по содержимому</p>
+      <p className={styles.label}>Find contacts by name</p>
       <input
         type="text"
         className={styles.input}

@@ -16,7 +16,7 @@ const getFilteredContacts = createSelector(
 const contactsSelectors = {
     getFilter,
     getAllContacts,
-    getFilteredContacts
+    getFilteredContacts,
 }
 
 export default contactsSelectors;
