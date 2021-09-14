@@ -6,7 +6,7 @@ const initialState = {
   user: { name: null, email: null },  //тут будет состояние с бека
   token: null,  //токен нужекн чтобы скрывать приватную коллекцию
   isLoggedIn: false,
-  // isFetchingCurrentUser: false,
+  isFetchingCurrentUser: false,
 };
 
 const authSlice = createSlice({
