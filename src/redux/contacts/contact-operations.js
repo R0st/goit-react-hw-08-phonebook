@@ -29,7 +29,7 @@ const fetchContact = () => async dispatch => {
 // }
 
 
-const addContact = ( name, number ) => dispatch => {
+const addContact = ({ name, number } ) => dispatch => {
     const contact = { name, number };
     dispatch(addContactRequest());
     axios.post(`/contacts`, contact)

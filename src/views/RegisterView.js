@@ -7,7 +7,7 @@ export default function RegisterView() {
     const dispatch = useDispatch();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPasword] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleChange = ({ target: { name, value } }) => {
         switch (name) {
@@ -16,7 +16,7 @@ export default function RegisterView() {
             case 'email':
                 return setEmail(value);
             case 'password':
-                return setPasword(value);
+                return setPassword(value);
             default:
                 return;
         }
@@ -27,7 +27,7 @@ export default function RegisterView() {
         dispatch(authOperations.register({ name, email, password }));
         setName('');
         setEmail('');
-        setPasword('');
+        setPassword('');
     };
 
     return (
@@ -37,7 +37,11 @@ export default function RegisterView() {
             <form onSubmit={handleSubmit} className={styles.form} autoComplete="off">
                 <label className={styles.label}>
                     Имя
-                    <input type="text" name="name" value={name} onChange={handleChange} />
+                    <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={handleChange} />
                 </label>
 
                 <label className={styles.label}>

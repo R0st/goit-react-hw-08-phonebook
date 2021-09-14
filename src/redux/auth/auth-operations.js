@@ -3,7 +3,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 // axios.defaults.baseURL = 'https://lpj-tasker.herokuapp.com';
 axios.defaults.baseURL='https://connections-api.herokuapp.com'
-
 const token = {
   set(token) {
     axios.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -18,13 +17,15 @@ const token = {
  * body: { name, email, password }
  * После успешной регистрации добавляем токен в HTTP-заголовок
  */
-const register = createAsyncThunk('auth/register', async credentials => {
+const register = createAsyncThunk('auth/register', async credentials => {   //отправка формы с RegisterView(handleSubmit)
   try {
-    const { data } = await axios.post('/users/signup', credentials);
+    const { data } = await axios.post('/users/signup', credentials );  //отправляем на бек 
     token.set(data.token);
-    return data;
+    
+    return data;  //возвращаем результат ответа с бека
   } catch (error) {
     //  Добавить обработку ошибки error.message
+    // throw error;
   }
 });
 
@@ -40,6 +41,7 @@ const logIn = createAsyncThunk('auth/login', async credentials => {
     return data;
   } catch (error) {
     //  Добавить обработку ошибки error.message
+    //  throw error;
   }
 });
 
@@ -76,12 +78,13 @@ const fetchCurrentUser = createAsyncThunk(
       return thunkAPI.rejectWithValue();
     }
 
-    token.set(persistedToken);
+    // token.set(persistedToken);
     try {
       const { data } = await axios.get('/users/current');
       return data;
     } catch (error) {
       // Добавить обработку ошибки error.message
+       
     }
   },
 );

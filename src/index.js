@@ -7,10 +7,6 @@ import { persistor, store } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import 'modern-normalize/modern-normalize.css';
 
-// console.log(store);
-// console.log(store.getState());
-// store.dispatch(myAction);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
