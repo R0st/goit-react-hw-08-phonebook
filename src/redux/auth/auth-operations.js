@@ -21,7 +21,6 @@ const register = createAsyncThunk('auth/register', async credentials => {   //о
   try {
     const { data } = await axios.post('/users/signup', credentials );  //отправляем на бек 
     token.set(data.token);
-    
     return data;  //возвращаем результат ответа с бека
   } catch (error) {
     //  Добавить обработку ошибки error.message
@@ -76,9 +75,10 @@ const fetchCurrentUser = createAsyncThunk(
     if (persistedToken === null) {
       // console.log('Токена нет, уходим из fetchCurrentUser');
       return thunkAPI.rejectWithValue();
+      // return state;
     }
 
-    // token.set(persistedToken);
+    token.set(persistedToken);
     try {
       const { data } = await axios.get('/users/current');
       return data;
